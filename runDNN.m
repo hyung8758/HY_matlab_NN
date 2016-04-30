@@ -69,7 +69,7 @@ hiddenLayers = [10];
 errorMethod = 'CE'; % MSE / CE
 hiddenActivation = 'sigmoid'; % sigmoid / tanh
 outputActivation = 'softmax'; % linear / sigmoid / softmax
-plotOption = 'on'; % on / off
+plotOption = 'off'; % on / off
 
 % pre-training
 
