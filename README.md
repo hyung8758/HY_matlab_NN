@@ -1,4 +1,4 @@
-This is HY_matlab_NN. 
+# This is HY_matlab_NN. 
                                                               Hyungwon Yang
                                                                  2016.02.02
                                                                    EMCS lab
@@ -7,9 +7,8 @@ Machine learning toolbox based on matlab.
 
 
 
-Linux and MacOSX
-(This script is not tested on Window)
----------------------------------------------------------------------------
+Linux and MacOSX (This script is not tested on Window)
+---
 
 Matlab R2015a
 (This script was not tested on the other versions.)
@@ -17,7 +16,7 @@ Matlab R2015a
 
 
 PREREQUISITE
----------------------------------------------------------------------------
+---
 1. Data preprocessing: Your data should be pre-processed before setting it 
  on the DNN. Please refer to preprocessing instrcution described as below.
 
@@ -65,6 +64,7 @@ CONTACTS
 ---------------------------------------------------------------------------
 
 Hosung Nam / hnam@korea.ac.kr
+
 Hyungwon Yang / hyung8758@gmail.com
 
 
