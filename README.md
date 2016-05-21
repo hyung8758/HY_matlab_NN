@@ -14,7 +14,6 @@ Matlab R2015a
 (This script was not tested on the other versions.)
 
 
-
 PREREQUISITE
 ---
 1. Data preprocessing: Your data should be pre-processed before setting it 
@@ -41,7 +40,7 @@ PREREQUISITE
 
 
 CONTENTS
----------------------------------------------------------------------------
+---
 Deep Neural Network (DNN) for classification & curve-fitting problems.
 
  - DNN
@@ -61,7 +60,7 @@ Deep Neural Network (DNN) for classification & curve-fitting problems.
 
 		
 CONTACTS
----------------------------------------------------------------------------
+---
 
 Hosung Nam / hnam@korea.ac.kr
 
@@ -69,7 +68,7 @@ Hyungwon Yang / hyung8758@gmail.com
 
 
 VERSION HISTORY
----------------------------------------------------------------------------
+---
 1.0. (2016.02.02)
  - 5 scripts were uploaded. Each script works independently. Therefore,
 users should select a specific script for training data.
