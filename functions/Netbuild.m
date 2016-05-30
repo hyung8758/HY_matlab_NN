@@ -13,18 +13,24 @@ function N = Netbuild(inputData, targetData, training, testing, trainRatio,...
                       outputActivation, plotOption, preTrainEpoch, preLearningRate)
 
 % Format Check
-if trainRatio <= 0 || trainRatio > 100
-    error('trainRatio value should range from 0 to 100')
-elseif tranRatio < 80
-    warning(['Allocating at least 20% of validation set is recommanded. '...
-        'Otherwise, the training result might be overfitted to validation set.'])
-elseif trainRation < 40
-    warning('Training data set is too small. Your training result might not be credible.')    
-elseif trainRatio == 100
-    warning(['trainRatio value is 100 which means every datasets will be allocated to training sets.'...
-             'validation process will not be operated.'])
-elseif any(rem(trainRatio,1))
-    error('trainRatio value should be integer not float.')
+if strcmp(epochTrain,'off')
+    if trainRatio <= 0 || trainRatio > 100
+        error('trainRatio value should be ranged from 0 to 100')
+    elseif trainRatio > 85 && trainRatio < 99
+        warning(['Allocating at least 20% of validation set is recommanded. '...
+            'Otherwise, the training result might be overfitted to validation set.'])
+    elseif trainRatio <= 40
+        warning('TrainRatio is too low. Your training result might not be credible.')    
+    elseif trainRatio == 100
+        warning(['trainRatio value is 100 which means every datasets will be allocated to training sets.'...
+                 ' validation process will not be operated.'])
+    elseif any(rem(trainRatio,1))
+        error('trainRatio value should be integer not float.')
+    end
+    
+elseif strcmp(epochTrain,'on')
+    trainRatio = 100;
+    warning(['In epochTrain mode, all data will be trained.'])
 end
                   
 % Input and output infromation

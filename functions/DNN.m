@@ -436,19 +436,34 @@ if strcmp(trainMode,'on')
         
         if strcmp(plotOption,'on')
             
-            val_history = [val_history valMSE];
-            figmse = figure(2);
-            plot(1:epoch,sse_history,'o-r',...
-                1:epoch,val_history,'o-g')
-            xlabel('Epoch Number','fontsize',12)
-            ylabel('Error','fontsize',12)
-            axis([0 epochVisual 0 max(sse_history(1),val_history(1))])
-            title('Error change','fontsize',15)
-            legend('Training Error','Validation Error')
-            drawnow
-            if epochVisual-2 < epoch
-                epochVisual = epochVisual + 50;
-            end
+            if strcmp(epochMode,'off')
+                val_history = [val_history valMSE];
+                figmse = figure(2);
+                plot(1:epoch,sse_history,'o-r',...
+                    1:epoch,val_history,'o-g')
+                xlabel('Epoch Number','fontsize',12)
+                ylabel('Error','fontsize',12)
+                axis([0 epochVisual 0 max(sse_history(1),val_history(1))])
+                title('Error change','fontsize',15)
+                legend('Training Error','Validation Error')
+                drawnow
+                if epochVisual-2 < epoch
+                    epochVisual = epochVisual + 50;
+                end
+                
+            elseif strcmp(epochMode,'on')
+                figmse = figure(2);
+                plot(1:epoch,sse_history,'o-r')
+                xlabel('Epoch Number','fontsize',12)
+                ylabel('Error','fontsize',12)
+                axis([0 epochVisual 0 sse_history(1)])
+                title('Error change','fontsize',15)
+                legend('Training Error')
+                drawnow
+                if epochVisual-2 < epoch
+                    epochVisual = epochVisual + 50;
+                end
+             end
         end
         
         % Error comparision.
