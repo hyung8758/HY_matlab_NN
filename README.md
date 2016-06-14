@@ -7,8 +7,14 @@ Machine learning toolbox based on matlab.
 
 
 
-Linux and MacOSX (This script is not tested on Window)
+### OS Compatibility. Linux and MacOSX (This script is not tested on Windows)
 ---
+- Tested successfully (stable): 
+ - MAC OSX: R2015a ~ R2016a
+ - Windows: R2016a
+
+- Not Tested (unstable):
+ - Linux
 
 Matlab R2015a
 (This script was not tested on the other versions.)
@@ -36,7 +42,17 @@ PREREQUISITE
    information: 0 or 1. For example, if your target data is MNIST and one 
    of the target data is digit 6, then your target data will look like
    [0 0 0 0 0 1 0 0 0 0].
+   You may use 'spreadTarget' function to transform the target data.
 
+
+USAGE
+---
+- Run demo_ANN first in order to understand the ANN structures.
+1. Run pathOrganizer.
+2. Import training and testing data.
+3. Set the parameters.
+4. Build N structure. (run NetBuild)
+5. Run DNN.
 
 
 CONTENTS
@@ -101,7 +117,7 @@ occure training delay)
  - Dataset folder has been created. All datasets will be saved here.
  - demo_ANN script is added.
 
-2.5. (2016.3.23)
+2.5. (2016.03.23)
  - Reorganize all the functions. Move functions into specific directories.
  - pathOrganizer is added.
  - Error rates from training and validation processes are visualized.
@@ -114,7 +130,15 @@ ex. trainRatio = 80 means 80% of datasets for training and 20% of them for valid
  will stop the training process automatically when the error changes 
  between validation and training is not significant any longer.
 
-2.6. (2016.4.02)
+2.6. (2016.04.02)
  - Validation system changed. 
  - CIFAR10 image datasets are added.
-       
+
+2.7. (2016.06.14)
+ - All sample data is removed. Instead, functions need to be used in order to 
+   download and save sample data. New data downloading functions were added.
+ - Demo script has been changed.
+ - Folders restructured.
+ - Windows compatibility test finished.
+ - Bug fixed. 
+

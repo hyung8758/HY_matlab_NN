@@ -1,17 +1,39 @@
-clear;clc;close all
+% demo_DNN
+% DNN trial script. 
+%                                                             Hyungwon Yang
+%                                                             2016. 02. 26
+%                                                             EMCS labs
+%
+% DEMONSTRATION: classification problem with MNIST data.
 
-% Import data and set parameters.
-%%% STEP 1. %%%
-% DEMONSTRATION: CLASSIFICATION
-load datasets/train_mnist
+% Clear command window and workspace.
+clear;clc;close all
+% Set path.
+po()
+
+%% Import data and set parameters.
+%%% STEP 1 %%%
+
+% Download data.
+download_mnist()
+
+%% Import data.
+load mnist_input
+load mnist_target
+
+% Transform input data format.
+inputData = mnist_input(1:60000,:);
+new_target = spreadTarget(mnist_target)';
+targetData = new_target(1:60000,:);
+
 training = 'on';
 testing = 'off';
 
 % PARAMETER SETTINGS
-trainRatio = 80; % Percentage of train data, rest of them for validation.
+trainRatio = 85; % Percentage of train data, rest of them for validation.
 epochTrain = 'on'; 
-fineTrainEpoch = 50;
-fineLearningRate = 0.01;
+fineTrainEpoch = 5;
+fineLearningRate = 0.1;
 momentum = 0.9;
 batchSize = 100;
 normalize = 'off';
@@ -28,7 +50,7 @@ preLearningRate = 0.01;
 
 
 %% Build a network with data and parameters.
-%%% STEP 2. %%%
+%%% STEP 2 %%%
 
 N = Netbuild(inputData, targetData, training, testing,trainRatio,epochTrain,...
                       fineTrainEpoch, fineLearningRate, momentum, batchSize,...
@@ -36,13 +58,14 @@ N = Netbuild(inputData, targetData, training, testing,trainRatio,epochTrain,...
                       outputActivation, plotOption, preTrainEpoch, preLearningRate);
                   
 %% Train the network.
-%%% STEP 3. %%%
+%%% STEP 3 %%%
 
-N_updated = DNN(N,1);
+N_updated = DNN(N);
 
-%% Testing
-
-load datasets/large_test_mnist
+%% Test the trained model.
+%%% STEP 4 %%%
+inputData = mnist_input(60001:end,:);
+targetData = new_target(60001:end,:);
 N_updated.inputData = inputData;
 N_updated.targetData = targetData;
 N_updated.training = 'off';
