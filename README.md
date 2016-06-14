@@ -1,4 +1,4 @@
-# This is HY_matlab_NN. 
+# HY_matlab_NN. 
                                                               Hyungwon Yang
                                                                  2016.02.02
                                                                    EMCS lab
@@ -7,16 +7,16 @@ Machine learning toolbox based on matlab.
 
 
 
-### OS Compatibility. Linux and MacOSX (This script is not tested on Windows)
+### OS Compatibility.
 ---
 - Tested successfully (stable): 
- - MAC OSX: R2015a ~ R2016a
- - Windows: R2016a
+ - MAC OSX: El Capitan
+ - Windows: 8
 
 - Not Tested (unstable):
  - Linux
 
-Matlab R2015a
+Matlab R2015a ~ R2016a
 (This script was not tested on the other versions.)
 
 
@@ -42,7 +42,7 @@ PREREQUISITE
    information: 0 or 1. For example, if your target data is MNIST and one 
    of the target data is digit 6, then your target data will look like
    [0 0 0 0 0 1 0 0 0 0].
-   You may use 'spreadTarget' function to transform the target data.
+   You can transform the target data format by 'spreadTarget' function.
 
 
 USAGE
