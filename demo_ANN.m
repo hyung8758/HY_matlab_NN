@@ -31,8 +31,8 @@ testing = 'off';
 
 % PARAMETER SETTINGS
 trainRatio = 85; % Percentage of train data, rest of them for validation.
-epochTrain = 'on'; 
-fineTrainEpoch = 5;
+epochTrain = 'off'; 
+fineTrainEpoch = 100;
 fineLearningRate = 0.1;
 momentum = 0.9;
 batchSize = 100;
