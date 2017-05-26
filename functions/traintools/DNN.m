@@ -451,18 +451,18 @@ if strcmp(trainMode,'on')
                     epochVisual = epochVisual + 50;
                 end
                 
-            elseif strcmp(epochMode,'on')
-                figmse = figure(2);
-                plot(1:epoch,sse_history,'o-r')
-                xlabel('Epoch Number','fontsize',12)
-                ylabel('Error','fontsize',12)
-                axis([0 epochVisual 0 sse_history(1)])
-                title('Error change','fontsize',15)
-                legend('Training Error')
-                drawnow
-                if epochVisual-2 < epoch
-                    epochVisual = epochVisual + 50;
-                end
+%             elseif strcmp(epochMode,'on')
+%                 figmse = figure(2);
+%                 plot(1:epoch,sse_history,'o-r')
+%                 xlabel('Epoch Number','fontsize',12)
+%                 ylabel('Error','fontsize',12)
+%                 axis([0 epochVisual 0 sse_history(1)])
+%                 title('Error change','fontsize',15)
+%                 legend('Training Error')
+%                 drawnow
+%                 if epochVisual-2 < epoch
+%                     epochVisual = epochVisual + 50;
+%                 end
              end
         end
         

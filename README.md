@@ -1,10 +1,11 @@
+
 # HY_matlab_NN. 
-                                                              Hyungwon Yang
-                                                                 2016.02.02
-                                                                   EMCS lab
+
+	Hyungwon Yang
+	2016.02.02
+	EMCS lab
 
 Machine learning toolbox based on matlab.
-
 
 
 ### OS Compatibility.
@@ -77,10 +78,9 @@ Deep Neural Network (DNN) for classification & curve-fitting problems.
 		
 CONTACTS
 ---
+Hyungwon Yang / hyung8758@gmail.com
 
 Hosung Nam / hnam@korea.ac.kr
-
-Hyungwon Yang / hyung8758@gmail.com
 
 
 VERSION HISTORY

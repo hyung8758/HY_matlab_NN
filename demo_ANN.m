@@ -31,14 +31,14 @@ testing = 'off';
 
 % PARAMETER SETTINGS
 trainRatio = 85; % Percentage of train data, rest of them for validation.
-epochTrain = 'off'; 
-fineTrainEpoch = 100;
+epochTrain = 'on'; 
+fineTrainEpoch = 300;
 fineLearningRate = 0.1;
 momentum = 0.9;
 batchSize = 100;
-normalize = 'off';
+normalize = 'on';
 hiddenLayers = [100];
-errorMethod = 'CE'; % MSE / CE
+errorMethod = 'CE'; % MSE(Mean Square Error) / CE(Cross Entropy)
 hiddenActivation = 'sigmoid'; % sigmoid / tanh
 outputActivation = 'softmax'; % linear / sigmoid / softmax
 plotOption = 'on'; % on / off
@@ -52,7 +52,7 @@ preLearningRate = 0.01;
 %% Build a network with data and parameters.
 %%% STEP 2 %%%
 
-N = Netbuild(inputData, targetData, training, testing,trainRatio,epochTrain,...
+N = Netbuild(targetData, inputData, training, testing,trainRatio,epochTrain,...
                       fineTrainEpoch, fineLearningRate, momentum, batchSize,...
                       normalize, hiddenLayers, errorMethod, hiddenActivation,...
                       outputActivation, plotOption, preTrainEpoch, preLearningRate);
